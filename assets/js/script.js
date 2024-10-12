@@ -4,10 +4,13 @@
           $('.menu-bar').click(function () {
             $(this).toggleClass("nav_btn");
             $('.main-nav').toggleClass('open-nav');
+            $('body').toggleClass('active-sidenav');
           });
-      
-          $('.close-nav').click(function () {
-            $('.main-nav').removeClass('open-nav');
+
+          // Open side cart
+            $('.package_req .req_anc').on('click', function(e) {
+              e.preventDefault();
+              $('.shipment-track').slideToggle();
           });
 
         ///////// **main Slider** /////////

@@ -98,12 +98,26 @@ img
 }
 .header
 {
-    padding: 18px 0;
     position: absolute;
     width: 100%;
     top: 0;
     z-index: 99;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.header-content
+{
+    padding: 18px 0;
+    position: relative;
+}
+.header-content::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: saturate(180%) blur(7px);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
 }
 .nav-bar
 {
@@ -165,6 +179,7 @@ img
     color: var(--white-color);
     width: 180px;
     height: 45px;
+    font-size: 16px;
     border-radius: var(--border-raduis);
     font-weight: 700;
     box-shadow: 0 0 0 5px transparent;
@@ -185,6 +200,59 @@ img
     background-color: var(--primary-color);
     box-shadow: none;
     animation: none;
+}
+.shipment-track
+{
+    display: none;
+}
+.track-box
+{
+    position: relative;
+    min-width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+.track-box .track-input
+{
+    width: 100%;
+    height: 45px;
+    padding: 5px 20px;
+    font-size: 14px;
+    color: #77878F;
+    -webkit-text-fill-color : var(--primary-color);
+    background-color: var(--white-color);
+    border: 2px solid transparent;
+    border-radius: var(--border-raduis);
+    outline: none;
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.08);
+    border-radius: var(--border-raduis);
+    transition: 0.5s ease;
+}
+.track-box .track-input:focus
+{
+    border-color: var(--secondery-color);
+    box-shadow: none;
+}
+.track-box .track-btn
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 45px;
+    background-color: var(--secondery-color);
+    color: var(--primary-color);
+    border: none;
+    font-size: 20px;
+    border-radius: var(--border-raduis);
+    margin-inline-start: 10px;
+}
+.track-box .track-btn:hover
+{
+    background-color: var(--primary-color);
+    color: var(--secondery-color);
 }
 .main-slide
 {
@@ -534,7 +602,7 @@ img
 .testmonials-sec
 {
     margin-top: 120px;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
 }
 .testmoial-item
 {
@@ -592,13 +660,174 @@ img
 }
 .testmoial-item .item-rate i.active
 {
-    color: #FA8232;
+    color: #f7d106;
 }
 .testmoial-item .testmoial-text
 {
     font-size: 15px;
     color: var(--primary-color);
     text-align: center;
+}
+.testmonials-sec .read-more
+{
+    margin-top: 90px;
+}
+.testmoial-modal .modal-content
+{
+    background-color: var(--body-bg);
+    padding: 30px 50px;
+}
+.testmoial-modal .modal-header
+{
+    border: none;
+    padding: 0;
+}
+.testmoial-modal .modal-header .modal-close
+{
+    display: flex;
+    font-size: 24px;
+    color: var(--primary-color);
+    transition: 0.3s ease;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.testmoial-modal .modal-header .modal-close:hover
+{
+    color: var(--secondery-color);
+}
+.testmoial-modal .modal-body
+{
+    padding: 0;
+}
+.testmoial-modal .title
+{
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.testmoial-modal .form-content
+{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 12px;
+    row-gap: 24px;
+}
+.testmoial-modal .form-content .form-group:nth-child(3),
+.testmoial-modal .form-content .form-group:last-child {
+    grid-column: 1 / -1;
+}
+.form-label
+{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+.form-input
+{
+    width: 100%;
+    height: 45px;
+    padding: 5px 20px;
+    font-size: 14px;
+    color: #77878F;
+    -webkit-text-fill-color : var(--primary-color);
+    background-color: var(--white-color);
+    border: 2px solid transparent;
+    border-radius: var(--border-raduis);
+    outline: none;
+    box-shadow: none;
+    border-radius: var(--border-raduis);
+    transition: 0.5s ease;
+}
+textarea.form-input
+{
+    height: auto;
+    padding: 10px 20px;
+}
+.form-input:focus,.form-input:active
+{
+    border-color: var(--secondery-color);
+    box-shadow: none;
+}
+html[dir="rtl"] [type=email],
+html[dir="rtl"] [type=number],
+html[dir="rtl"] [type=tel],
+html[dir="rtl"] [type=url]
+{
+    direction: rtl;
+}
+.testmoial-modal .testmoial-rate
+{
+  display: flex;
+  align-items: center;
+}
+.testmoial-modal .star-rating
+{
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.testmoial-modal .star-rating input
+{
+  display: none;
+}
+.testmoial-modal .star-rating .rate_star
+{
+  display:inline-block;
+  font-size: 20px;
+  color: #cac5c5;
+  cursor: pointer;
+  margin: 1px;
+}
+.testmoial-modal .star-rating input:checked ~ label 
+{
+  color: #f7d106;
+}
+.testmoial-modal .star-rating label:hover,
+.testmoial-modal .star-rating label:hover ~ label {
+  color: #f7d106;
+}
+.testmoial-modal .star-rating input:checked + label:hover,
+.testmoial-modal .star-rating input:checked + label:hover ~ label {
+  color: #f7d106;
+}
+.testmoial-modal #button-review
+{
+  font-size: 14px;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--border-raduis);
+}
+.testmoial-modal #button-review:hover
+{
+  background-color: var(--secondery-color);
+}
+.testmoial-rate .form-label
+{
+    font-weight: 700;
+    margin-inline-end: 20px;
+    margin-bottom: 0;
+}
+.submit_btn
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background-color: var(--secondery-color);
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--border-raduis);
+}
+.submit_btn:hover
+{
+    background-color: var(--primary-color);
+    color: var(--secondery-color);
 }
 .client-item .client-img
 {
@@ -918,6 +1147,10 @@ img
     {
         transform: translate(0, -5px) rotate(45deg);
     }
+    .active-sidenav
+    {
+        overflow: hidden;
+    }
     .main-nav
     {
         height: 100%;
@@ -1025,7 +1258,7 @@ img
     .testmonials-sec 
     {
         margin-top: 60px;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
     .features-row
     {
@@ -1092,6 +1325,16 @@ img
     {
         font-size: 12px;
     }
+    .testmoial-modal .modal-content
+    {
+        padding: 15px;
+    }
+    .testmoial-modal .form-content 
+    {
+        -ms-grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
+    }
 }
 
 
@@ -1155,5 +1398,9 @@ img
     .footer .contact-txt
     {
         font-size: 14px;
+    }
+    .track-box .track-btn
+    {
+        font-size: 16px;
     }
 }

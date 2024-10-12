@@ -24,59 +24,71 @@
     <body>
         <!-- Start Header -->
         <header class="header">
-            <div class="container">
-                <div class="nav-bar">
-                    <div class="logo">
-                        <a href="#">
-                            <img src="./assets/images/logo.png" alt="logo" class="img-fluid">
-                        </a>
-                    </div> 
-                    <div class="main-nav">
-                        <div class="language-cont">
-                            <a role="button" type="button" class="lang-anc fixall">
-                               <span class="lang-name">English</span>
-                               <i class="fa-solid fa-globe"></i>
+            <div class="header-content">
+                <div class="container">
+                    <div class="nav-bar">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="./assets/images/logo.png" alt="logo" class="img-fluid">
                             </a>
-                       </div>
-                        <ul class="nav-list fixall list-unstyled">
-                            <li class="nav-li">
-                                <a href="index.html" class="nav-anc fixall">الرئيسية</a>
-                            </li>
-                            <li class="nav-li">
-                                <a href="about-us.html" class="nav-anc fixall">خدماتنا</a>
-                            </li>
-                            <li class="nav-li">
-                                <a href="projects.html" class="nav-anc fixall">ماذا عنا</a>
-                            </li>
-                            <li class="nav-li">
-                                <a href="" class="nav-anc fixall">الباقات</a>
-                            </li>
-                            <li class="nav-li">
-                                <a href="contact-us.html" class="nav-anc fixall">تواصل معنا</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="nav-tools">
-                        <div class="language-cont">
-                             <a role="button" type="button" class="lang-anc fixall">
+                        </div> 
+                        <div class="main-nav">
+                            <div class="language-cont">
+                                <a role="button" type="button" class="lang-anc fixall">
                                 <span class="lang-name">English</span>
                                 <i class="fa-solid fa-globe"></i>
-                             </a>
+                                </a>
                         </div>
-                        <div class="package_req">
-                            <a href="#!" class="fixall req_anc">اطلب باقتك الأن</a>
+                            <ul class="nav-list fixall list-unstyled">
+                                <li class="nav-li">
+                                    <a href="index.html" class="nav-anc fixall">الرئيسية</a>
+                                </li>
+                                <li class="nav-li">
+                                    <a href="about-us.html" class="nav-anc fixall">خدماتنا</a>
+                                </li>
+                                <li class="nav-li">
+                                    <a href="projects.html" class="nav-anc fixall">ماذا عنا</a>
+                                </li>
+                                <li class="nav-li">
+                                    <a href="" class="nav-anc fixall">الباقات</a>
+                                </li>
+                                <li class="nav-li">
+                                    <a href="contact-us.html" class="nav-anc fixall">تواصل معنا</a>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="menu-bar">
-                             <span class="bar1"></span>
-                             <span class="bar2"></span>
-                             <span class="bar3"></span>
-                         </div>
-                     </div>
+                        <div class="nav-tools">
+                            <div class="language-cont">
+                                <a role="button" type="button" class="lang-anc fixall">
+                                    <span class="lang-name">English</span>
+                                    <i class="fa-solid fa-globe"></i>
+                                </a>
+                            </div>
+                            <div class="package_req">
+                                <a href="#!" class="fixall req_anc">تتبع شحنتك الأن</a>
+                            </div>
+                            <div class="menu-bar">
+                                <span class="bar1"></span>
+                                <span class="bar2"></span>
+                                <span class="bar3"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shipment-track">
+                <div class="container">
+                    <div class="track-box">
+                        <input class="track-input" name='tracking' placeholder='ادخل رقم الشحنة' type='text' />
+                        <button class="track-btn fixall" type='submit'>                     
+                            تتبع
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>
         <!-- End Header -->
-
+         
         <!-- Start Main slider -->
         <main class="main-section">
             <div class="main-slider">
@@ -411,6 +423,11 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
+                    <div class="read-more">
+                        <a class="read-anc fixall" type="button" role="button" data-bs-toggle="modal" data-bs-target="#formModal">
+                            اكتب تعليقك 
+                        </a>
+                    </div>
                 </div>
             </div>
          </section>
@@ -599,6 +616,73 @@
             <i class="fa-brands fa-whatsapp"></i>
         </a>
         <!-- End fixed whats -->
+
+        <!-- The Modal -->
+        <div class="modal fade testmoial-modal" id="formModal">
+            <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+        
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="modal-close fixall" data-bs-dismiss="modal">
+                        <i class="las la-times"></i>
+                    </button>
+                </div>
+        
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="testmoial-form">
+                        <h4 class="fixall title">يسعدنا تلقي تعليقك</h4>
+                        <form action="" class="form-content">
+                            <div class="form-group">
+                                <label for="full_name" class="form-label">
+                                    الاسم 
+                                </label>
+                                <input class="form-input form-control" type="text" id="full_name" name="full-name" placeholder="الاسم الأول">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    البريد الالكتروني 
+                                </label>
+                                <input class="form-input form-control" type="email" id="email" name="email" placeholder="البريد الالكتروني">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-input form-control" name="enquiry" id="enquery" rows="6" placeholder="أترك تعليقك هنا....."></textarea>
+                            </div>
+
+                            <div class="form-group testmoial-rate">
+                                <label class="form-label">علامات التقييم</label>
+                                <div class="star-rating">
+                                    <input id="star5" type="radio" name="rating" value="5" />
+                                    <label for="star5" class="rate_star"><i class="fa-solid fa-star"></i></label>
+                
+                                    
+                                    <input id="star4" type="radio" name="rating" value="4" />
+                                    <label for="star4" class="rate_star"><i class="fa-solid fa-star"></i></label>
+                
+                                    
+                                    <input id="star3" type="radio" name="rating" value="3" />
+                                    <label for="star3" class="rate_star"><i class="fa-solid fa-star"></i></label>
+                
+                                    
+                                    <input id="star2" type="radio" name="rating" value="2" />
+                                    <label for="star2" class="rate_star"><i class="fa-solid fa-star"></i></label>
+                
+                                    
+                                    <input id="star1" type="radio" name="rating" value="1" />
+                                    <label for="star1" class="rate_star"><i class="fa-solid fa-star"></i></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="submit_btn fixall">إرسال</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
 
 
         <script src="./assets/js/jquery-3.7.0.min.js"></script>
