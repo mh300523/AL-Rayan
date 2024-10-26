@@ -1,4 +1,9 @@
 (function ($) {
+    $(window).scroll(function () {
+        updateProgressCircle();
+        staticsScroll();
+    });
+
     $(document).ready(function() {
           ///////// **mobile size** /////////
           $('.menu-bar').click(function () {
@@ -12,7 +17,12 @@
               e.preventDefault();
               $('.shipment-track').slideToggle();
           });
-
+            // Smooth scroll to top on arrow click
+        $('.arrow-up').hide();
+        $('.arrow-up').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 800, 'swing'); // Smooth scroll to top
+        });
         ///////// **main Slider** /////////
         var mainSlider = new Swiper('.main-slider .swiper-container', {
             loop: true,
@@ -165,16 +175,34 @@
             });
 
 
+
         // lazy load
         lazyLoad();
     });
 
+
+    // Function to update the progress circle
+    function updateProgressCircle() {
+        var scrollTop = $(window).scrollTop();
+        var docHeight = $(document).height() - $(window).height();
+        var scrollPercent = (scrollTop / docHeight) * 100;
+        $(".progress-circle").css("background", 
+            `conic-gradient(var(--primary-color) ${scrollPercent}%, transparent ${scrollPercent}% 100%)`
+        );
+
+        if (scrollTop >= 500) {
+            $(".arrow-up").fadeIn(300);
+        } else {
+            $(".arrow-up").fadeOut(300);
+        }
+    }
+
     /*************************statistics *******************/
-    $(window).scroll(staticsScroll);
 
     var viewed = false;
     
     function isScrolledIntoView(elem) {
+        if (!elem.length) return false; // Check if the element exists
         var docViewTop = $(window).scrollTop();
         var docViewBottom = docViewTop + $(window).height();
     
@@ -185,9 +213,10 @@
     }
     
     function staticsScroll() {
-        if (isScrolledIntoView($(".stat-num")) && !viewed) {
+        var $statNum = $(".stat-num");
+        if ($statNum.length && isScrolledIntoView($statNum) && !viewed) {
             viewed = true;
-            $(".stat-num").each(function() {
+            $statNum.each(function() {
                 var $this = $(this),
                     countTo = $this.attr("data-count");
                 $({ countNum: $this.text() }).animate(
@@ -209,6 +238,7 @@
         }
     }
 
+    
     /**********lazy load ***********/
     function lazyLoad() {
         const images = document.querySelectorAll(".lazy-img");

@@ -1,0 +1,42 @@
+.iti
+{
+  display: block;
+}
+.iti--inline-dropdown .iti__dropdown-content
+{
+  z-index: 9;
+}
+html[dir="rtl"] input.iti__tel-input
+{
+  direction: rtl;
+}
+html[dir="ltr"] input.iti__tel-input
+{
+  direction: ltr;
+}
+
+
+input::placeholder {
+  color: #bbb;
+}
+
+
+.notice {
+  margin-top: 15px;
+}
+
+
+#error-msg {
+  color: #a94442;
+}
+
+#valid-msg {
+  color: #00c900;
+}
+
+input.error {
+  border: 2px solid #a94442;
+}
+.hide {
+  display: none;
+}
